@@ -1,0 +1,23 @@
+
+.popup {
+    display: flex;
+    position: fixed; 		
+    height: 0px;		
+    width: 82%;			
+    max-width: 1000px;	
+    top: 0;			
+    left: 15%;			
+    overflow-y: hidden;		
+    background-color: blueviolet;
+    box-shadow: 0 12px 23px 0 rgb(0 0 0 / 60%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    transition: 0.5s;
+    margin: 0;
+    padding: 0;
+    justify-content: space-around;
+    z-index: 2;
+}
+.popupText {
+    padding: 20px;
+    margin-top: 20px;
+    color: honeydew;
+}

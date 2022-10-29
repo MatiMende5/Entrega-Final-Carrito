@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tu tienda virtual">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/styles/main.css">
+    <link rel="stylesheet" href="./src/styles/catalog.css">
+    <link rel="stylesheet" href="./src/styles/cart.css">
+    <link rel="stylesheet" href="./src/styles/new-stock.css">
+    <link rel="stylesheet" href="./src/styles/cartDetail.css">
+    <link rel="stylesheet" href="./src/styles/tema.css">
+    <link rel="stylesheet" href="./src/styles/popup.css">
+    <link rel="stylesheet" href="./src/styles/navMenu.css">
+    <link rel="shortcut icon" href="./img/my-leni.png">
+
+    <title>Tienda virtual FlexiLen</title>
+</head>
+<body>
+    <header>
+        <div class="menu-btn">
+            <i class="fas fa-bars fa-2x"></i>
+        </div>        
+        <nav class="nav-main">
+            <abbr id="textoLeni"><img src="./img/my-leni.png" alt="Logo" class="nav-brand"> </abbr>       
+            <ul class="nav-menu">
+                <li>
+                    <a  onclick="openNav()">Nuevo Stock</a>
+                </li>
+                <li>
+                    <p>Categoría</p>                
+                    <select id="filtroCat" name="filtroCat" onChange="filtrarCategoria()">                        
+                        <option value="all">All</option>
+                        <option value="jewelery">Joyeria</option> 
+                        <option value="electronics">Electronica</option>
+                        <option value="women's clothing">Ropa Mujer</option>
+                        <option value="men's clothing">Ropa Hombre</option>  
+                    </select>  
+                </li>                
+                <li>
+                    <p>Tema</p>                       
+                    <label id="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label> 
+                </li>
+            </ul>
+        </nav>
+    </header> 
+    
+    <aside>     
+        <div id="btnComprar" class="btnComprar"></div> 
+        <div id="myNav">   
+                <div id="muestraCarrito"></div>
+        </div>            
+        <p id="total"></p>
+        <div id="btnVaciar"></div>   
+        <div>
+            <img  id="carrito" src="./img/carrito.png">
+        </div>
+        <div>
+            <h3 id="counter">0</h3>
+        </div>
+    </aside>
+
+    <div class="contenedor" id="article">
+    </div>
+   
+    <div id="superior" class="superior"></div>
+    <div id="comprar" class="comprar"></div>
+    <div id="newStock" class="newStock">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">X</a>
+        <form class="formulario" id="formulario" >
+            <h1>Nuevo Artículo</h1>
+            <label for="titulo">Titulo:</label>
+            <input type="text" id="titulo" name="titulo"  required><br>
+            <label for="descripcion">Descripción:</label>
+            <input type="text" id="especificaciones" name="descripcion"  required><br>
+            <label for="categoria">Categoría:</label>
+            <select id="categoria" name="categoria">
+                <option value="" disabled selected>Seleccione una Categoria...</option>
+                <option value="joyeria">Joyeria</option> 
+                <option value="electronica">Electronica</option>
+                <option value="ropa mujer">Ropa Mujer</option>
+                <option value="ropa hombre">Ropa Hombre</option>    
+            </select>                
+            <div class="precioCant">
+                <label for="precio">Precio:</label>
+                <input type="number" id="costo" name="precio" required ><br>
+                <label for="cantidad">Cantidad:</label>
+                <input type="number" id="cantidad" name="cantidad" required ><br>
+            </div>               
+            <label for="imagen">Click en la Imagen para seleccionar:</label>
+            <p id="imagen" name="imagen">   </p>
+            <div id="div1" ></div>
+            <div class="selectImg">        
+                <img id="drag" src="./img-catalog/laptops.jpg" onclick="addImg('./img-catalog/laptops.jpg')">
+                <img id="drag" src="./img-catalog/celulares.jpeg" onclick="addImg('./img-catalog/celulares.jpeg')">
+                <img id="drag" src="./img-catalog/audifonos.jpg" onclick="addImg('./img-catalog/audifonos.jpg')">
+                <img id="drag" src="./img-catalog/disco-ext.jpg" onclick="addImg('./img-catalog/disco-ext.jpg')">
+                <img id="drag" src="./img-catalog/monitor-large.jpg" onclick="addImg('./img-catalog/monitor-large.jpg')">
+                <img id="drag" src="./img-catalog/pendrive.png" onclick="addImg('./img-catalog/pendrive.png')">
+                <img id="drag" src="./img-catalog/raton.jpg" onclick="addImg('./img-catalog/raton.jpg')">
+                <img id="drag" src="./img-catalog/teclado.jpeg" onclick="addImg('./img-catalog/teclado.jpeg')">
+                <img id="drag" src="./img-catalog/tv-sony.jpg" onclick="addImg('./img-catalog/tv-sony.jpg')">
+            </div>
+            <input type="button" class="btn" onclick="agregar_articulo()" value="Agregar producto al catálogo">
+            <input type="button" class="btn" onclick='document.getElementById("formulario").reset();' value="Reset">               
+        </form>
+    </div>
+    
+    <footer class="social">
+        <div>
+            <p>Matias Mendelovich</p>
+        </div>
+        <div class="links">
+            <a href="#">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+        
+    </footer>
+    
+    <div class="popup" id="popup">
+        <p>mensaje popup de poca duracion</p>
+    </div>
+    
+    <script src="./src/script/catalog.js"></script>
+    <script src="./src/script/main.js"></script>
+    <script src="./src/script/cart.js"></script>
+    <script src="./src/script/newStock.js"></script>
+</body>
+</html>

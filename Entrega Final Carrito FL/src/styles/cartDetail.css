@@ -1,0 +1,143 @@
+.comprar {
+    display: none;
+    width: 82%;
+    max-width: 1000px;
+    position: fixed; 
+    height: 740px;
+    top: 174px;
+    left: 15%;
+    overflow-y: scroll;
+    background-color:var(--color-fondo-enc);
+    box-shadow: 0 12px 23px 0 rgb(0 0 0 / 60%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+	padding: 10px;
+}
+
+.superior {
+    display: none;
+    width: 82%;
+    max-width: 1000px;
+    position: fixed; 
+    height: 130px;
+    top: 45px;
+    left: 15%; 
+    background-color:var(--color-fondo-enc);
+    box-shadow: 0 12px 23px 0 rgb(0 0 0 / 60%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+	padding: 10px;
+    z-index: 2;
+}
+
+.menuVenta {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.caja2 {
+    width: 99%;
+    height: auto;
+    font-size: 10px;
+    color: var(--color-fuente);   
+    display: flex;     
+    flex-direction: row;
+    text-align: center;
+    box-shadow: 0 15px 8px 0 rgba(0, 0, 0, 0.2), 0 15px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color:var(--color-fondo);
+    margin: 8px;
+    padding: 20px;
+    font-size: 25px;    
+    justify-content: space-between;
+    align-items: center;
+}
+
+.caja2.div {
+    height: 200px;
+}
+.caja2 div h3 {
+    margin: 15px;
+    font-size: 18px;
+}
+.caja2 p {
+    font-size: 20px;
+    margin: 2px;
+}    
+.caja2 img {
+    width: 30%;
+}
+
+.caja2Img img {
+    width: 200px;
+    height: 240px;
+}
+.info {
+    text-align: right;
+    
+}
+.info p {
+    padding: 0;
+    margin-right: 40px;
+}
+
+.cantDisp input[type=number]{
+    width: 35%;
+    text-align: center;   
+}
+.cantDisp input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+@media (max-width: 680px){
+    .superior {
+        height: 120px;
+        padding: 10px;
+        z-index: 2;
+        width: 95%;
+        left: 0;
+    }
+    .comprar {
+        top: 164px;
+        width: 95%;
+        left: 0;
+    }
+    .caja2 p {
+        font-size: 14px;
+        margin: 1px;
+    }
+    .caja2 div h3 {
+        margin: 12px;
+        font-size: 12px;
+    }
+   
+    .caja2Img img {
+        width: 140px;
+        height: 170px;
+    }
+    .info {
+        font-size: 12px;
+    }
+ 
+    .info p {
+        padding: 0px;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 500px){
+    .caja2 p {
+        font-size: 10px;
+        margin: 2px;
+    }
+    .caja2Img img {
+        width: 120px;
+        height: 140px;
+   
+        font-size: 10px;
+    }
+    .caja2 div h3 {
+        font-size: 12px;
+    }
+
+}

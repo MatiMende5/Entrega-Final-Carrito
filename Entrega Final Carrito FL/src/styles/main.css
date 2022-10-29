@@ -1,0 +1,104 @@
+:root {
+    --color-fuente: #ffffff;
+    /*--color-fondo: #2b3942;*/
+    --color-fondo: rgba(37, 60, 78, 0.8);
+    --color-fondo-enc: #313dc5;
+    --color-border:  1px solid #637c8b;
+    --color-monto: #cbff00;
+    --background-img: url('../../img/walpaper2.jpg');
+    --bck-button: rgb(3 47 111);
+
+}
+
+[tema="light"]{
+    --color-fuente: #000;
+   /* --color-fondo: rgb(255, 255, 255);*/
+    --color-fondo: rgba(201, 212, 161, 0.8);
+    --color-fondo-enc: rgb(251, 255, 0);
+    --color-border:  1px solid #0a0a0a;
+    --color-monto: #cfd15c;
+    --bck-button: rgb(135, 228, 59);
+    --background-img: url('../../img/walpaper1.jpg');
+   
+}
+
+
+
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+	background-image: var(--background-img);
+	background-size: cover;
+	background-attachment: fixed;
+    color: var(--color-fuente);
+}
+
+
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+}
+.opciones {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 10px;
+    padding-bottom: 7px;
+    align-items: center;
+}
+.categoria {
+    margin: 0 10px;
+    padding: 15px;
+}
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: var(--bck-button);
+    color: var(--color-fuente);
+    padding: 10px 15px;
+    border: none;
+  }
+  
+  .openbtn:hover {
+    background-color:#444;
+  }
+  footer {
+	margin: 20px 0;
+	background: rgba(255,255,255,.2);
+	padding: 20px;	
+	color: var(--color-fuente);
+	display: flex;
+	flex-direction: column;    
+    text-align: center;
+    font-size: 20px;
+}
+footer p {
+    padding: 20px;
+}
+
+@media (max-width: 650px){
+
+    .openbtn{
+        font-size: 13px;
+    }
+    header div img {
+        width: 80px;
+    }
+   
+
+}
+@media (max-width: 500px){
+   
+    .openbtn{
+        font-size: 10px;
+    }
+    header div img {
+        width: 60px;
+    }
+
+}
